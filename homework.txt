@@ -1,0 +1,326 @@
+(base) C:\Users\key31>cd..
+
+(base) C:\Users>cd..
+
+(base) C:\>virtualenv test
+Using base prefix 'C:\\Users\\key31\\Anaconda3'
+  No LICENSE.txt / LICENSE found in source
+New python executable in C:\test\Scripts\python.exe
+Installing setuptools, pip, wheel...
+done.
+
+(base) C:\>cd test
+
+(base) C:\test>Scripts\active
+'Scripts\active' 不是內部或外部命令、可執行的程式或批次檔。
+
+(base) C:\test>Scripts\activate
+
+(test) (base) C:\test>heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/browser/72b03e68-adcf-4a22-bc22-f4d1ebfbd5d6
+Logging in... done
+Logged in as key31165@gmail.com
+
+(test) (base) C:\test>git clone https://github.com/heroku/python-getting-started.git
+fatal: destination path 'python-getting-started' already exists and is not an empty directory.
+
+(test) (base) C:\test>git init
+Reinitialized existing Git repository in C:/test/.git/
+
+(test) (base) C:\test>cd python-getting-started
+
+(test) (base) C:\test\python-getting-started>heroku create
+Creating app... done, ? shielded-reef-87954
+https://shielded-reef-87954.herokuapp.com/ | https://git.heroku.com/shielded-reef-87954.git
+
+(test) (base) C:\test\python-getting-started>git push heroku master
+Everything up-to-date
+
+(test) (base) C:\test\python-getting-started>heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free
+
+(test) (base) C:\test\python-getting-started>heroku open
+
+(test) (base) C:\test\python-getting-started>git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+(test) (base) C:\test\python-getting-started>git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+(test) (base) C:\test\python-getting-started>git add .
+
+(test) (base) C:\test\python-getting-started>git commit -m "test"
+[master f9066b4] test
+ 2 files changed, 10 insertions(+)
+
+(test) (base) C:\test\python-getting-started>git push heroku master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 695 bytes | 99.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Traceback (most recent call last):
+remote:          File "manage.py", line 10, in <module>
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/core/management/__init__.py", line 357, in execute
+remote:            django.setup()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/__init__.py", line 24, in setup
+remote:            apps.populate(settings.INSTALLED_APPS)
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/apps/registry.py", line 114, in populate
+remote:            app_config.import_models()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/apps/config.py", line 211, in import_models
+remote:            self.models_module = import_module(models_module_name)
+remote:          File "/app/.heroku/python/lib/python3.7/importlib/__init__.py", line 127, in import_module
+remote:            return _bootstrap._gcd_import(name[level:], package, level)
+remote:          File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+remote:          File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+remote:          File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+remote:          File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+remote:          File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+remote:          File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+remote:          File "/tmp/build_1f5e5fc17400794c827dfa5d48107038/hello/models.py", line 9, in <module>
+remote:            class Choice(models.Model):
+remote:          File "/tmp/build_1f5e5fc17400794c827dfa5d48107038/hello/models.py", line 12, in Choice
+remote:            votes = models.IntergerField(default=0)
+remote:        AttributeError: module 'django.db.models' has no attribute 'IntergerField'
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to secret-plateau-71076.
+remote:
+To https://git.heroku.com/secret-plateau-71076.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/secret-plateau-71076.git'
+
+(test) (base) C:\test\python-getting-started>git push heroku master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 695 bytes | 139.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Traceback (most recent call last):
+remote:          File "manage.py", line 10, in <module>
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/core/management/__init__.py", line 357, in execute
+remote:            django.setup()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/__init__.py", line 24, in setup
+remote:            apps.populate(settings.INSTALLED_APPS)
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/apps/registry.py", line 114, in populate
+remote:            app_config.import_models()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/apps/config.py", line 211, in import_models
+remote:            self.models_module = import_module(models_module_name)
+remote:          File "/app/.heroku/python/lib/python3.7/importlib/__init__.py", line 127, in import_module
+remote:            return _bootstrap._gcd_import(name[level:], package, level)
+remote:          File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+remote:          File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+remote:          File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+remote:          File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+remote:          File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+remote:          File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+remote:          File "/tmp/build_ed551f8613a5403d2466d5eb97662135/hello/models.py", line 9, in <module>
+remote:            class Choice(models.Model):
+remote:          File "/tmp/build_ed551f8613a5403d2466d5eb97662135/hello/models.py", line 12, in Choice
+remote:            votes = models.IntergerField(default=0)
+remote:        AttributeError: module 'django.db.models' has no attribute 'IntergerField'
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to secret-plateau-71076.
+remote:
+To https://git.heroku.com/secret-plateau-71076.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/secret-plateau-71076.git'
+
+(test) (base) C:\test\python-getting-started>git push heroku master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 695 bytes | 99.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Traceback (most recent call last):
+remote:          File "manage.py", line 10, in <module>
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/core/management/__init__.py", line 357, in execute
+remote:            django.setup()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/__init__.py", line 24, in setup
+remote:            apps.populate(settings.INSTALLED_APPS)
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/apps/registry.py", line 114, in populate
+remote:            app_config.import_models()
+remote:          File "/app/.heroku/python/lib/python3.7/site-packages/django/apps/config.py", line 211, in import_models
+remote:            self.models_module = import_module(models_module_name)
+remote:          File "/app/.heroku/python/lib/python3.7/importlib/__init__.py", line 127, in import_module
+remote:            return _bootstrap._gcd_import(name[level:], package, level)
+remote:          File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+remote:          File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+remote:          File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+remote:          File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+remote:          File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+remote:          File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+remote:          File "/tmp/build_a65b7d25ded26672945bc2819b302110/hello/models.py", line 9, in <module>
+remote:            class Choice(models.Model):
+remote:          File "/tmp/build_a65b7d25ded26672945bc2819b302110/hello/models.py", line 12, in Choice
+remote:            votes = models.IntergerField(default=0)
+remote:        AttributeError: module 'django.db.models' has no attribute 'IntergerField'
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to secret-plateau-71076.
+remote:
+To https://git.heroku.com/secret-plateau-71076.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/secret-plateau-71076.git'
+
+(test) (base) C:\test\python-getting-started>git add .
+
+(test) (base) C:\test\python-getting-started>git commit -m "test"
+[master 19430b0] test
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+(test) (base) C:\test\python-getting-started>git push heroku master
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 1.02 KiB | 115.00 KiB/s, done.
+Total 10 (delta 6), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        120 static files copied to '/tmp/build_9030bab1bbef0c0c4dfe6b2203a67950/staticfiles', 378 post-processed.
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 55.4M
+remote: -----> Launching...
+remote:        Released v6
+remote:        https://secret-plateau-71076.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/secret-plateau-71076.git
+   2fde3b4..19430b0  master -> master
+
+(test) (base) C:\test\python-getting-started>heroku run python manage.py
+Running python manage.py on ? secret-plateau-71076... up, run.4040 (Free)
+/
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[contenttypes]
+    remove_stale_contenttypes
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+[sessions]
+    clearsessions
+
+[staticfiles]
+    collectstatic
+    findstatic
+    runserver
+
+(test) (base) C:\test\python-getting-started>heroku open
